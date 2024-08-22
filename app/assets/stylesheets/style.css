@@ -75,13 +75,14 @@ body {
   }
   
   .cta-button {
-    background-color: #ffc600;
+    background-color: #F9CD01;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     color: #000;
     font-weight: bold;
+    border-radius: 5px;
   }
   
   .cta-button:hover {
@@ -98,8 +99,8 @@ body {
   }
   
   .slider-item {
-    background-color: #555;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: black;
     padding: 15px;
     width: 200px;
     text-align: center;
@@ -141,8 +142,9 @@ body {
   }
   
   .publication-item .cta-button {
-    background-color: #ffc600;
+    background-color: #FFFFFF;
     margin-top: 20px;
+    border-radius: 5px;
   }
   
   /* Articles Styles */
@@ -157,74 +159,101 @@ body {
   }
   
   .articles-section {
-    display: flex;
-    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-top: 20px;
   }
   
   .article-item {
-    background-color: #fff;
+    background: #E8E8E8;
+    border: 1px solid #ccc;
     padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  
+  .article-item.featured {
+  grid-column: span 1;
+  
+  position: relative;
+}
+
+
+.article-item.featured::before {
+  content: 'Destacado';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffc107; /* Línea amarilla para el artículo destacado */
+  color: black;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
   
   .article-item h3 {
-    font-size: 22px;
-    color: #333;
-  }
-  
-  .article-item p {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .article-item .cta-button {
-    background-color: #ffc600;
     margin-top: 10px;
+    font-size: 18px;
   }
   
-  .featured {
-    background-color: #ffc600;
-    color: #000;
+  .article-item p.article-date {
+    font-size: 14px;
+    color: gray;
   }
   
-  .featured h3 {
-    color: #000;
-  }
-  
-  .featured p {
-    color: #333;
-  }
-
-/* Article Grid Styles */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.article-grid-item {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  .article-grid .cta-button {
+    margin-top: 10px;
+    background-color: #3C3C3C;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
     border-radius: 5px;
-}
+  }
+  
+  .subscribe-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #F9CD01;
+    text-align: center;
+  }
+  
+  .subscribe-content {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  .subscribe-content h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .subscribe-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .subscribe-content input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+  }
 
-.article-grid-item h3 {
-    font-size: 22px;
-    color: #333;
-}
-
-.article-grid-item p {
-    font-size: 14px;
-    color: #666;
-}
-
-.article-grid-item .cta-button {
-    background-color: #ffc600;
+  .next-button {
     margin-top: 10px;
-}
+    background-color: #3C3C3C;
+    color: white;
+    border: none;
+    padding: 15px 30px; /* Increase the padding to make the button larger */
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0 auto; /* Add this line to center the button */
+    display: block; /* Add this line to make the button a block element */
+    border-radius: 5px; /* Add this line to give the button round edges */
+  }
+

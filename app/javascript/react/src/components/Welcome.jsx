@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 
 const Welcome = () => {
       return (
@@ -35,7 +35,7 @@ const Welcome = () => {
           <section className="publications">
             <h2>Publicaciones</h2>
             <div className="publication-item">
-              <img src="image_path" alt="Revista Políticas Públicas Ing" />
+              
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
               <button className="cta-button">Más ediciones</button>
             </div>
@@ -44,7 +44,7 @@ const Welcome = () => {
           {/* Articles Section */}
         <section className="articles-section">
           <h2>Artículos</h2>
-          
+          <br></br>
           <div className="article-grid">
             <div className="article-item featured">
               <p className="article-date">19-08-2024</p>
@@ -72,8 +72,10 @@ const Welcome = () => {
               <button className="cta-button">Ver más</button>
             </div>
           </div>
+          <br></br>
+          <button className="next-button">Más artículos</button>
 
-          <button className="more-articles-button">Más artículos</button>
+          
 
           <div className="subscribe-section">
             <div className="subscribe-content">
@@ -87,10 +89,7 @@ const Welcome = () => {
       );
     }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Welcome />,
-    document.getElementById('welcome'),
-  )})
-
+const root = ReactDOM.createRoot(document.getElementById('welcome'));
+root.render(<Welcome />);
+    
 export default Welcome;
